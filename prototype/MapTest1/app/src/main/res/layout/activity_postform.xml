@@ -135,7 +135,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_above="@+id/bar"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/tokoB" />
+                android:background="@drawable/toko" />
 
             <ImageButton
                 android:id="@+id/bphoto"

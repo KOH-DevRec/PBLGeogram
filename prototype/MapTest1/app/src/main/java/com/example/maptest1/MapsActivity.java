@@ -2,7 +2,12 @@ package com.example.maptest1;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,7 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
 
@@ -23,6 +28,53 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        ImageButton MButton = findViewById(R.id.bmap);
+        ImageButton UButton = findViewById(R.id.buser);
+        ImageButton SButton = findViewById(R.id.bgralss);
+        ImageButton NButton = findViewById(R.id.bbell);
+
+        ImageButton PButton = findViewById(R.id.bpost);
+
+        MButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        UButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), UserActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        SButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), SearchlistActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        NButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), NoticeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        PButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplication(), PostformActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**

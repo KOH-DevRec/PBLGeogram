@@ -17,87 +17,89 @@
     android:gravity="center"
     />
 
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <RelativeLayout
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/bar"
-            android:scaleType="centerCrop"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_alignParentBottom="true"
-            android:src="@drawable/underbar"/>
+            android:layout_height="match_parent">
 
-    </RelativeLayout>
+            <ImageView
+                android:id="@+id/bar"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/underbar"/>
 
-    <LinearLayout
-        android:id="@+id/level"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:weightSum="5"
-        android:layout_gravity="bottom" >
+        </RelativeLayout>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:adjustViewBounds="true" />
+        <LinearLayout
+            android:id="@+id/level"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:layout_gravity="bottom" >
 
-        <ImageButton
-            android:id="@+id/bmap"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
 
-            android:background="@drawable/earth" />
+            <ImageButton
+                android:id="@+id/bmap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:adjustViewBounds="true" />
+                android:background="@drawable/earth" />
 
-        <ImageButton
-            android:id="@+id/buser"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
 
-            android:background="@drawable/human" />
+            <ImageButton
+                android:id="@+id/buser"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:adjustViewBounds="true" />
+                android:background="@drawable/human" />
 
-        <ImageButton
-            android:id="@+id/bgralss"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
 
-            android:background="@drawable/search" />
+            <ImageButton
+                android:id="@+id/bgralss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.2"
-            android:adjustViewBounds="true" />
+                android:background="@drawable/search" />
 
-        <ImageButton
-            android:id="@+id/bbell"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/bell" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
 
-    </LinearLayout>
-</FrameLayout>
+            <ImageButton
+                android:id="@+id/bbell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bell" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
