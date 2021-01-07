@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "367077736664",
+    "project_id": "geogram1-6b1a0",
+    "storage_bucket": "geogram1-6b1a0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367077736664:android:eef946202c7d066d1797ad",
+        "android_client_info": {
+          "package_name": "com.example.maptest1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "367077736664-c1lu1oj3r74qjlpqmjhhv6lk26qaolk9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maptest1",
+            "certificate_hash": "38c9e65f5cd34c73b0acb78cfc40649f0f9584f8"
+          }
+        },
+        {
+          "client_id": "367077736664-3o6eevn9umu00hvp8h1u6i70h3fsgmft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXEWKJgU8pmToAugLImjJRvgdC-FIoUk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367077736664-3o6eevn9umu00hvp8h1u6i70h3fsgmft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
