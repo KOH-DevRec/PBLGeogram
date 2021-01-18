@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-
+//ユーザページ上の機能に関するアクティビティ
 public class UserActivity extends AppCompatActivity{
 
     @Override

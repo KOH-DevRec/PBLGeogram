@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-
+//通知機能に関するアクティビティ
 public class NoticeActivity extends AppCompatActivity{
 
     @Override

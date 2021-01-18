@@ -16,9 +16,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+//ホームマップ上での機能に関するアクティビティ
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
+    private LocationData data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        data = (LocationData)getApplication();
 
         ImageButton MButton = findViewById(R.id.bmap);
         ImageButton UButton = findViewById(R.id.buser);
@@ -89,10 +93,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        // 現在地用
+        LatLng current = new LatLng(data.getCurrentLocation().getLatitude(), data.getCurrentLocation().getLongitude());
+        //定位置用
+        //LatLng IPU = new LatLng(39.802642, 141.137537);
 
-        // Add a marker in Tokyo station and move the camera
-        LatLng IPU = new LatLng(39.802642, 141.137537);
-        mMap.addMarker(new MarkerOptions().position(IPU).title("岩手県立大学"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(IPU, 15));
+        mMap.addMarker(new MarkerOptions().position(current).title("現在地"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current, 15));
     }
 }

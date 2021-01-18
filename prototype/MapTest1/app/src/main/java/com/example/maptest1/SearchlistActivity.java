@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-
+//閲覧機能に関するアクティビティ
 public class SearchlistActivity extends AppCompatActivity {
 
     @Override

@@ -13,7 +13,7 @@ public class PostData {
     private String firebaseKey;  //IDの代用
     public Date timestamp;       //日時
     private LatLng position;     //投稿位置
-    public int good;             //いいね数
+    public int Good;             //いいね数
 
     public PostData(){}
 
@@ -43,8 +43,8 @@ public class PostData {
     public Date getTimestamp() { return timestamp; }
     public void setTimestamp(Date timestamp) { this.timestamp = timestamp; }
 
-    public int getGood() { return good; }
-    public void setGood(int good) { this.good = good; }
+    public int getGood() { return Good; }
+    public void setGood(int good) { this.Good = good; }
 
     public LatLng getPosition() { return position; }
     public void setPosition(LatLng pos) { this.position = pos; }
