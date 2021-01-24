@@ -3,6 +3,7 @@ package com.example.maptest1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.graphics.Bitmap;
@@ -16,6 +17,8 @@ import android.widget.ImageView;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.File;
 import java.util.Date;
 
 //投稿機能に関するアクティビティ
@@ -29,6 +32,7 @@ public class PostformActivity extends AppCompatActivity{
 
     ImageButton bphoto;
     ImageView edit_text;
+    String currentPhotoPath;
 
 
     @Override
@@ -97,23 +101,32 @@ public class PostformActivity extends AppCompatActivity{
         });
 
 
-        protected void onActivityResult(
-                        int requestCode,
-                        int resultCode,
-                        Intent data) {
-            super.onActivityResult(requestCode,resultCode,data);
-            if(REQUEST_CAPTURE_IMAGE == requestCode
-            && resultCode == Activity.RESULT_OK) {
-                Bitmap capturedBitmap =
-                        (Bitmap) data.getExtras().get("data");
-                edit_text.setImageBitmap(capturedBitmap);
-            }
-        }
-
         nameEditText = (EditText) findViewById(R.id.edit_text1);
         captionEditText = (EditText) findViewById(R.id.edit_text2);
         tagEditText = (EditText) findViewById(R.id.edit_text3);
     }
+    @Override
+    protected void onActivityResult(
+            int requestCode,
+            int resultCode,
+            Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+        if(REQUEST_CAPTURE_IMAGE == requestCode
+                && resultCode == Activity.RESULT_OK) {
+            Bitmap capturedBitmap =
+                    (Bitmap) data.getExtras().get("data");
+            edit_text.setImageBitmap(capturedBitmap);
+        }
+    }
+    //写真をギャラリーに追加
+    private void galleryAddPic() {
+        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+        File f = new File(currentPhotoPath);
+        Uri contentUri = Uri.fromFile(f);
+        mediaScanIntent.setData(contentUri);
+        this.sendBroadcast(mediaScanIntent);
+    }
+
 
 
 
