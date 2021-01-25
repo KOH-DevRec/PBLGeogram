@@ -1,15 +1,18 @@
 package com.example.maptest1;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 //投稿機能に関するアクティビティ
@@ -18,11 +21,14 @@ public class PostformActivity extends AppCompatActivity{
     DatabaseReference reference = database.getReference();
     EditText nameEditText, captionEditText, tagEditText;
 
+    private LocationData data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postform);
+
+        data = (LocationData)getApplication();
 
         ImageButton MButton = (ImageButton)findViewById(R.id.bmap);
         ImageButton UButton = findViewById(R.id.buser);
@@ -80,10 +86,9 @@ public class PostformActivity extends AppCompatActivity{
         String caption = captionEditText.getText().toString();
         String tag = tagEditText.getText().toString();
         Date date = new Date();
+        LatLng pos = new LatLng(data.getCurrentLocation().getLatitude(), data.getCurrentLocation().getLongitude());
         String key = reference.push().getKey();
-
-//    引数のToDoDataの内容をデータベースに送る。
-        PostData postData = new PostData(key, name, caption, tag, date);
+        PostData postData = new PostData(key, name, caption, tag, date, pos);
 
         reference.child(key).setValue(postData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

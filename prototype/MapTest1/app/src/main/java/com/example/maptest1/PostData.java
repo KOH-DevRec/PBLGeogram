@@ -1,9 +1,10 @@
 package com.example.maptest1;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.google.firebase.firestore.ServerTimestamp;
-import com.google.type.LatLng;
-
+import java.time.LocalDateTime;
 import java.util.Date;
+
 
 //投稿(スレッド)のデータ構造
 public class PostData {
@@ -17,14 +18,16 @@ public class PostData {
 
     public PostData(){}
 
+    private UserData user;
+
     //データ送信用(postformで利用)
-    public PostData(String key, String name, String tag, String cap, Date date){
+    public PostData(String key, String name, String tag, String cap, Date date, LatLng pos){
         this.firebaseKey = key;
         this.name = name;
         this.tag = tag;
         this.caption = cap;
         this.timestamp = date;
-        //this.position = pos;
+        this.position = pos;
     }
 
     public String getName() { return name; }
