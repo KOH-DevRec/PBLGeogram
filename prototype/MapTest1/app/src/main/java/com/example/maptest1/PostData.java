@@ -21,8 +21,7 @@ public class PostData {
     private UserData user;
 
     //データ送信用(postformで利用)
-    public PostData(String key, String name, String tag, String cap, Date date, LatLng pos){
-        this.firebaseKey = key;
+    public PostData(String name, String tag, String cap, Date date, LatLng pos){
         this.name = name;
         this.tag = tag;
         this.caption = cap;

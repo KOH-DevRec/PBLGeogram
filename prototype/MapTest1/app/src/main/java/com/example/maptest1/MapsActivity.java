@@ -110,8 +110,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 GeoPoint geoPoint = document.getGeoPoint("position");
                                 LatLng geoLatLng = new LatLng(geoPoint.getLatitude(),geoPoint.getLongitude());
 
-                                pData.add(new PostData(document.getId(),
-                                        document.getString("name"),
+                                pData.add(new PostData(document.getString("name"),
                                         document.getString("tag"),
                                         document.getString("caption"),
                                         timeStamp,
@@ -120,6 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 Log.d("postsName", pData.get(i).getName());
                                 mMap.addMarker(new MarkerOptions().position(pData.get(i).getPosition()).title(pData.get(i).getName()).snippet(pData.get(i).getCaption())
                                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+
                                 i++;
                             }
                         } else {
@@ -146,12 +146,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // 現在地用
-        //LatLng current = new LatLng(data.getCurrentLocation().getLatitude(), data.getCurrentLocation().getLongitude());
-        //定位置用
-        LatLng IPU = new LatLng(39.802642, 141.137537);
+        LatLng current;
+        if(data.getCurrentLocation() == null){
+            current = new LatLng(39.802642, 141.137537);     //定位置(デバック用)
+        } else {
+            current = new LatLng(data.getCurrentLocation().getLatitude(), data.getCurrentLocation().getLongitude()); //現在地
+        }
 
-        mMap.addMarker(new MarkerOptions().position(IPU).title("現在地").snippet("投稿位置になります"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(IPU, 15));
+        mMap.addMarker(new MarkerOptions().position(current).title("現在地").snippet("投稿位置になります"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(current, 15));
     }
 }

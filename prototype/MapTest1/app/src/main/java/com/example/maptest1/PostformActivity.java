@@ -2,23 +2,31 @@ package com.example.maptest1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
+
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 //投稿機能に関するアクティビティ
 public class PostformActivity extends AppCompatActivity{
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference();
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     EditText nameEditText, captionEditText, tagEditText;
 
     private LocationData data;
@@ -71,6 +79,7 @@ public class PostformActivity extends AppCompatActivity{
         PButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                post(nameEditText,captionEditText,tagEditText);
                 Intent intent = new Intent(getApplication(), MapsActivity.class);
                 startActivity(intent);
             }
@@ -81,20 +90,40 @@ public class PostformActivity extends AppCompatActivity{
         tagEditText = (EditText) findViewById(R.id.edit_text3);
     }
 
-    public void post(View v) {
-        String name = nameEditText.getText().toString();
-        String caption = captionEditText.getText().toString();
-        String tag = tagEditText.getText().toString();
+    public void post(EditText n, EditText c, EditText t) {
+        String name = n.getText().toString();
+        String caption = c.getText().toString();
+        String tag = t.getText().toString();
         Date date = new Date();
         LatLng pos = new LatLng(data.getCurrentLocation().getLatitude(), data.getCurrentLocation().getLongitude());
-        String key = reference.push().getKey();
-        PostData postData = new PostData(key, name, caption, tag, date, pos);
+        GeoPoint geo = new GeoPoint(data.getCurrentLocation().getLatitude(), data.getCurrentLocation().getLongitude());
+        final PostData postData = new PostData(name, caption, tag, date, pos);
 
-        reference.child(key).setValue(postData).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void v) {
-                finish();
-            }
-        });
+        Map<String, Object> data = new HashMap<>();
+        data.put("name", name);
+        data.put("caption", caption);
+        data.put("tag", tag);
+        data.put("datetime", date);
+        data.put("position", geo);
+        data.put("good",0);
+        data.put("poster", "None");
+
+
+
+        db.collection("posts")
+                .add(data)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("posts", "DocumentSnapshot successfully written!");
+                        Log.d("postsName", postData.getName());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("posts", "Error getting documents");
+                    }
+                });
     }
 }
