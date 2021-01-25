@@ -6,15 +6,32 @@
     android:layout_height="match_parent">
 
     <FrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ListView
-            android:id="@+id/list_view"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:orientation="vertical"
+            tools:context=".NoticeActivity">
+
+            <ListView
+                android:id="@+id/myListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/emptyView"
+                android:text="No Notice Data"
+                android:padding="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,11 +39,11 @@
 
             <ImageView
                 android:id="@+id/bar"
-                android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
                 android:layout_alignParentBottom="true"
-                android:src="@drawable/underbar"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/underbar" />
 
         </RelativeLayout>
 
@@ -34,9 +51,9 @@
             android:id="@+id/level"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_gravity="bottom"
             android:orientation="horizontal"
-            android:weightSum="5"
-            android:layout_gravity="bottom" >
+            android:weightSum="5">
 
             <TextView
                 android:layout_width="0dp"

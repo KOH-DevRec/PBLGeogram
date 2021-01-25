@@ -1,11 +1,11 @@
 package com.example.maptest1;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 //ユーザページ上の機能に関するアクティビティ
 public class UserActivity extends AppCompatActivity{
