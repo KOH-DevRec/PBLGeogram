@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:padding="20dp"
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="場所名"
+        android:gravity="center"
+        />
+    <TextView
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        android:text="写真"
+        />
+    <TextView
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text2"
+        android:background="@drawable/edittext_flame"
+        android:paddingLeft="5dp"
+        />
+
+    <TextView
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:id="@+id/text4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text"
+        android:text="キャプション"
+        />
+    <TextView
+        android:id="@+id/edit_text2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text4"
+        android:inputType="text"
+        android:background="@drawable/edittext_flame"
+        android:paddingLeft="10dp"
+        />
+
+    <TextView
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:id="@+id/text5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text2"
+        android:text="登録タグ"
+        />
+    <TextView
+        android:id="@+id/edit_text3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text5"
+        android:inputType="text"
+        android:background="@drawable/edittext_flame"
+        android:paddingLeft="5dp"
+        />
+
+    <TextView
+        android:paddingTop="5dp"
+        android:paddingLeft="5dp"
+        android:id="@+id/text6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text3"
+        android:text="自身のコメント"
+        />
+
+    <TextView
+        android:id="@+id/edit_text4"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text6"
+        android:inputType="text"
+        android:background="@drawable/edittext_flame"
+        android:paddingLeft="5dp"
+        />
+
+    <FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/bar"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/underbar"
+                />
+
+            <ImageView
+                android:id="@+id/myuser"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:layout_alignParentLeft="true"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/user_g"
+                />
+
+            <ImageView
+                android:id="@+id/mycomment"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="10dp"
+                android:onClick="good"
+                android:layout_toRightOf="@id/myuser"
+                android:background="@drawable/comment"
+                />
+
+            <ImageButton
+                android:id="@+id/cboard"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                android:paddingLeft="50dp"
+                android:layout_toRightOf="@id/myuser"
+                android:layout_above="@+id/myuser"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:onClick="good"
+                android:background="@drawable/commentboard"
+                />
+
+            <ImageButton
+                android:id="@+id/bgood"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitXY"
+                android:paddingLeft="50dp"
+                android:layout_toRightOf="@id/cboard"
+                android:layout_above="@+id/myuser"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:onClick="good"
+                android:background="@drawable/good"
+                />
+
+            <ImageView
+                android:id="@+id/otheruser"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:layout_alignParentLeft="true"
+                android:layout_above="@+id/myuser"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/user_o"
+                />
+
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:id="@+id/text7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_above="@+id/myuser"
+                android:layout_toRightOf="@id/bgood"
+                android:text="いいね！"
+                android:textSize= "20dp"
+                />
+
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:id="@+id/text8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_above="@+id/myuser"
+                android:layout_toRightOf="@id/bgood"
+                android:text="               112"
+                android:textSize= "20dp"
+                />
+
+            <EditText
+                android:id="@+id/ctext"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_toRightOf="@id/mycomment"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_above="@+id/bar"
+                android:inputType="text"
+                android:background="@drawable/edittext_underflame"
+                android:hint="コメントの追加"
+                android:layout_marginBottom="15dp"
+                android:paddingLeft="10dp"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/level"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:layout_gravity="bottom" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
+
+            <ImageButton
+                android:id="@+id/bmap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:background="@drawable/earth" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
+
+            <ImageButton
+                android:id="@+id/buser"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:background="@drawable/human" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
+
+            <ImageButton
+                android:id="@+id/bgralss"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:background="@drawable/search" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:adjustViewBounds="true" />
+
+            <ImageButton
+                android:id="@+id/bbell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bell" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

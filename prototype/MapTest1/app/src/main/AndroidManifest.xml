@@ -48,6 +48,7 @@
         <activity android:name=".UserActivity" />
         <activity android:name=".LocationActivity" />
         <activity android:name=".MapsActivity" />
+        <activity android:name=".PostViewActivity" />
     </application>
 
 </manifest>
