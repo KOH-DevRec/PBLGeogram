@@ -39,7 +39,7 @@ public class UserActivity extends AppCompatActivity{
         SButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplication(), SearchlistActivity.class);
+                Intent intent = new Intent(getApplication(), PostViewActivity.class);
                 startActivity(intent);
             }
         });

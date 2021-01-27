@@ -5,6 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:padding="20dp"
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="通知ページ"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/edit_text1"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text"
+        android:gravity=""
+        android:background="@drawable/edittext_flame"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize= "16dp"
+        />
+
+    <TextView
+        android:id="@+id/edit_text2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text1"
+        android:gravity=""
+        android:background="@drawable/edittext_underflame"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize= "16dp"
+        />
+
+    <TextView
+        android:id="@+id/edit_text3"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text2"
+        android:gravity=""
+        android:background="@drawable/edittext_underflame"
+        android:paddingLeft="10dp"
+        android:text=""
+        android:textSize= "16dp"
+        />
+
     <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -28,6 +82,86 @@
                 android:layout_alignParentBottom="true"
                 android:src="@drawable/underbar"/>
 
+            <ImageView
+                android:id="@+id/user"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="fitXY"
+                android:layout_alignParentLeft="true"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="520dp"
+                android:background="@drawable/user_g"
+                />
+
+            <ImageView
+                android:id="@+id/pin"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="fitXY"
+                android:layout_alignParentLeft="true"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="420dp"
+                android:background="@drawable/geoicon512size"
+                />
+
+            <ImageView
+                android:id="@+id/good"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="fitXY"
+                android:layout_alignParentLeft="true"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="320dp"
+                android:background="@drawable/good"
+                />
+
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:id="@+id/text01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="530dp"
+                android:layout_toRightOf="@id/user"
+                android:text="OikawaHirotoさんにフォローされました！"
+                android:textSize= "16dp"
+                />
+
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:id="@+id/text02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="430dp"
+                android:layout_toRightOf="@id/user"
+                android:text="指定地域内で新しい投稿がありました！"
+                android:textSize= "16dp"
+                />
+
+            <TextView
+                android:paddingTop="5dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:id="@+id/text03"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_above="@+id/bar"
+                android:layout_marginBottom="330dp"
+                android:layout_toRightOf="@id/user"
+                android:text="KitadaAkikoさんにいいねされました！"
+                android:textSize= "16dp"
+                />
         </RelativeLayout>
 
         <LinearLayout

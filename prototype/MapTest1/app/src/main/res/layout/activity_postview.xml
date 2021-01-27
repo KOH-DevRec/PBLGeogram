@@ -13,7 +13,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="場所名"
+        android:text="岩手県立大学：ツリー点灯！"
+        android:textSize= "20dp"
         android:gravity="center"
         />
     <TextView
@@ -27,6 +28,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text"
         android:text="写真"
         />
+
     <TextView
         android:id="@+id/edit_text"
         android:layout_width="match_parent"
@@ -34,7 +36,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text2"
-        android:background="@drawable/edittext_flame"
         android:paddingLeft="5dp"
         />
 
@@ -56,9 +57,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text4"
-        android:inputType="text"
         android:background="@drawable/edittext_flame"
         android:paddingLeft="10dp"
+        android:text="県大のシンボルツリーがイルミネーションしてた！めっちゃキレイ✨"
+        android:textSize= "16dp"
         />
 
     <TextView
@@ -74,12 +76,14 @@
         />
     <TextView
         android:id="@+id/edit_text3"
+        android:paddingTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text5"
-        android:inputType="text"
+        android:text="#イルミネーション"
+        android:textSize= "20dp"
         android:background="@drawable/edittext_flame"
         android:paddingLeft="5dp"
         />
@@ -100,10 +104,13 @@
         android:id="@+id/edit_text4"
         android:layout_width="match_parent"
         android:layout_height="40dp"
+        android:paddingTop="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text6"
         android:inputType="text"
+        android:text=""
+        android:textSize= "20dp"
         android:background="@drawable/edittext_flame"
         android:paddingLeft="5dp"
         />
@@ -127,6 +134,17 @@
                 />
 
             <ImageView
+                android:id="@+id/tree"
+                android:layout_width="110dp"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:layout_above="@+id/myuser"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="320dp"
+                android:src="@drawable/tree"
+                />
+
+            <ImageView
                 android:id="@+id/myuser"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -137,7 +155,7 @@
                 android:background="@drawable/user_g"
                 />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/mycomment"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
